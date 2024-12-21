@@ -1,3 +1,5 @@
+// ２章「JavaScriptの基本文法」
+
 let hello = 'Hello World'; // let 変数名 = 内容;
 alert(hello);
 
