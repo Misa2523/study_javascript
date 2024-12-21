@@ -25,6 +25,10 @@ function addString(strA){
 /*------------------複数の関数で表示できるようにする------------------*/
 // じゃんけんの手を入力してもらうプロンプト欄を生成（入力ダイアログ）
 let user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んでください。');
+while ((user_hand != "グー") && (user_hand != "チョキ") && (user_hand != "パー") && (user_hand != null)){ //nullはキャンセルボタンの判定
+  alert('グー・チョキ・パーのいずれかを入力してください');
+  user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んでください。');
+}
 
 // じゃんけんの手をランダムに生成する関数の呼び出し
 let is_hand = getJShand();
@@ -33,14 +37,19 @@ let is_hand = getJShand();
 let judge = winLose(user_hand, is_hand);
 
 // 結果の表示
-alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + is_hand + 'です。\n結果は' + judge + 'です。');
+if (user_hand != null){
+  alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + is_hand + 'です。\n結果は' + judge + 'です。');
+}
+else{
+  alert("またチャレンジしてね");
+}
 
 // ランダムでじゃんけんの手を生成する関数
 function getJShand(){
   // 乱数を生成する関数を設定
   let js_hand_num = Math.floor(Math.random() * 3); // 0~2までのランダムば整数値を生成
   let hand_name;
-  
+
   // ランダム生成された数値を基に条件分岐させ、グーチョキパーを出し分ける
   if(js_hand_num == 0){
     hand_name = "グー";
@@ -49,14 +58,14 @@ function getJShand(){
   } else if(js_hand_num == 2){
     hand_name = "パー";
   }
-  
+
   return hand_name;
 }
 
 // ユーザーの手とJavaScriptのじゃんけんの手を比べる関数
 function winLose(user, js){
   let winLoseStr;
-  
+
   if(user == "グー"){
     if(js == "グー"){
       winLoseStr = "あいこ";
@@ -82,6 +91,6 @@ function winLose(user, js){
       winLoseStr = "あいこ";
     }
   }
-  
+
   return winLoseStr;
 }
