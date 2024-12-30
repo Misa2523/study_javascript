@@ -1,2 +1,27 @@
-/*----------------------------「マウスオーバー」イベント、「マウスアウト」イベント----------------------------*/
-/*jQueryで「マウスオーバー」イベント、「マウスアウト」イベントを設定*/
+/*----------------------------thisとは----------------------------*/
+.box1 {
+  background-color: #FFFFFF;
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+.bg1 {
+  background-color: #FFAAAA;
+}
+
+.bg2 {
+  background-color: #FFBBBB;
+}
+
+.bg3 {
+  background-color: #FFCCCC;
+}
+
+.bg4 {
+  background-color: #FFDDDD;
+}
+
+
+
+/*----------------------------childrenとは----------------------------*/
