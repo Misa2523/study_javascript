@@ -32,13 +32,18 @@ $(function(){
 これを、thisを使って書き換えると↓のようになる
 */
 
-$(function(){
-  $('.box1').on('click', function(){
-     $(this).slideUp(); //クリックされた要素をスライドアップ（this=クリックされた要素）
-  });
-});
+// $(function(){
+//   $('.box1').on('click', function(){
+//     $(this).slideUp(); //クリックされた要素をスライドアップ（this=クリックされた要素）
+//   });
+// });
 
 
 /*----------------------------childrenとは----------------------------*/
-//
+// HTML要素直下のすべての子要素を取得するときに使う
+$(function(){
+  $('button').on('click', function(){
+     $('ul').children().css('color', 'red'); //クリックされた要素直下のすべての子要素を赤に変える
+  });
+});
 
